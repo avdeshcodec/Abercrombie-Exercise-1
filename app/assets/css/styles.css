@@ -1,0 +1,213 @@
+﻿.hidden {
+   display: none;
+}
+html,
+body {
+   background: #ffffff;
+   color: #333;
+   font-family: Lato, sans-serif;
+   margin: 0;
+}
+
+
+.ml-3 {
+   margin-left: 16px;
+}
+
+.container {
+   max-width: 1024px;
+   /* width: 100%; */
+   margin: 0px auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+
+.list-item {
+   padding: 30px 0;
+}
+
+
+.item-list ul {
+   list-style: none;
+   margin: 0px;
+   padding: 0px;
+   list-style: none;
+   
+   display: grid;
+   -ms-grid-columns: (minmax(180px,1fr))[auto-fill];
+   grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+   -ms-grid-rows: auto;
+   grid-template-rows: auto;
+   grid-gap: 16px;
+}
+.item-list ul li{
+   border: 1px solid #ddd;
+   padding:8px;
+   border-radius: 5px;
+   background-color:#fff;
+ }
+ .item-list ul li .item-row {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   
+}
+
+.item-avatar{
+   border-radius: 5px;
+   width: 100px;
+   height: 100px;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-color: #eee;
+   border:1px solid #ddd;
+}
+.item-avatar a img{
+   text-transform: uppercase;
+   font-family: "Lucida Console";
+   align-items: center;
+   color: rgba(233, 236, 237, 0.78);
+   border-radius: 8px;
+   width:90px;
+   height:90px;
+   display: inline-flex;
+   font-size: 16px;
+   padding: 5px;
+   vertical-align: middle;
+   margin: 0 10px 0 0;
+   /* border: 1px solid; */
+ }
+.item-author {
+   font-size: 15px;
+   margin: 0 0 5px 0;
+}
+.item-more {
+   font-size: 14px;
+   margin: 0 0 5px 0;
+}
+.item-more span {
+   display: block;
+   line-height: 20px;
+}
+.item-more span b {
+   padding: 0 4px 0 0;
+}
+
+.item-content {
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   min-height: 80px;
+   position: relative;
+}
+
+.btn-row {
+   /* position: absolute;
+   bottom: 0; */
+}
+
+.btn-row .btn-link {
+   color: #3699FF;
+   border-radius: 6px;
+   transition: 0.5s;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 13px;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.btn-content:hover{
+   background-color: #3699ffd4;
+   transition:0.5s;
+}
+
+/* erro message */
+.item-error {
+   visibility: hidden;
+   min-width: 250px;
+   margin-left: -125px;
+   background-color: #FFE2E5;
+   color: #ec0c24;
+   text-align: center;
+   border-radius: 6px;
+   padding: 16px;
+   position: fixed;
+   z-index: 1;
+   /* left: 50%; */
+   bottom: 13px;
+   right: 24px;
+   border: 1px solid #ec0c24;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.item-error.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+#loader {
+   position:fixed;
+   width:100%;
+   left:0;right:0;top:0;bottom:0;
+   background-color: rgba(255,255,255,0.7);
+   z-index:9999;
+   display:none;
+}
+
+#loader.show {
+   display: block;
+}
+
+
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+#loader::after {
+   content:'';
+   display:block;
+   position:absolute;
+   left:48%;top:40%;
+   width:40px;height:40px;
+   border-style:solid;
+   border-color:black;
+   border-top-color:transparent;
+   border-width: 4px;
+   border-radius:50%;
+   -webkit-animation: spin .8s linear infinite;
+   animation: spin .8s linear infinite;
+}

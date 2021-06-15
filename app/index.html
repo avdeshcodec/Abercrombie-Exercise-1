@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Users App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+    <link href='assets/css/styles.css' rel='stylesheet' type='text/css' />
+
+    <!--Scripts-->
+    <script src="vendors/handlebars/handlebars.js"></script>
+</head>
+
+<body>
+    <!---->
+    <div class="container">
+        <section class="list-item">
+            <h1>User Profiles</h1>
+            <div class="item-list" id="itemList"></div>
+        </section>
+
+        <div id="loader"></div>
+    </div>
+
+    <script id="item-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each users}}
+            <li id="user_{{id}}">
+                <div class="item-row">
+                    <div class="item-avatar" style="background-image: url('{{avatar}}');"></div>
+                    <div class="item-content">
+                        <div class="item-author"><strong>{{name}}</strong></div>
+                        <div class="item-more hidden">
+                            <span><strong>Id:</strong> {{id}}</span>
+                            <span><strong>Date:</strong> {{convertTimestamp createdAt}}</span>
+                        </div>
+                        <div class="btn-row">
+                            <a href="javascript:void(0)" class="btn-link" onclick="toggleContent(this, '{{id}}')">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <!---->
+
+    <!-- Main Scripts -->
+    <script src="assets/js/commonFunctions.js"></script>
+    <script src="assets/js//manageUsers.js"></script>
+
+</body>
+
+</html>
