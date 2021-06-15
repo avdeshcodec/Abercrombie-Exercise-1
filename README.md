@@ -13,7 +13,7 @@ Exercise 1: Consuming RESTful API data
 - Added 4 test cases and for writing test cases I have used `cypress`. 
 
 ## Below are the steps to run the application:
-- Open terminal and navigate to app directory.
+- Open terminal and navigate to `app` directory.
 - Run `npm i` to install node modules
 - Run `npm start` to launch server
 - Navigate to browser and open url `http://localhost:3000`
